@@ -1,35 +1,42 @@
-import globals from "globals";
-import pluginJs from "@eslint/js";
-import tseslint from "typescript-eslint";
-import pluginReact from "eslint-plugin-react";
-import prettierRecommended from "eslint-plugin-prettier/recommended";
-import unusedImports from "eslint-plugin-unused-imports";
+import globals from 'globals';
+import pluginJs from '@eslint/js';
+import tseslint from 'typescript-eslint';
+import pluginReact from 'eslint-plugin-react';
+import prettierRecommended from 'eslint-plugin-prettier/recommended';
+import unusedImports from 'eslint-plugin-unused-imports';
 
 export default [
-  { ignores: [".next", "nodes_modules", "dist/"] },
-  { files: ["**/*.{js,mjs,cjs,ts,jsx,tsx}"] },
+  { ignores: ['.next', 'nodes_modules', 'dist/'] },
+  { files: ['**/*.{js,mjs,cjs,ts,jsx,tsx}'] },
   { languageOptions: { globals: globals.browser } },
   pluginJs.configs.recommended,
   ...tseslint.configs.recommended,
   pluginReact.configs.flat.recommended,
   {
     plugins: {
-      "unused-imports": unusedImports,
+      'unused-imports': unusedImports,
     },
   },
   {
     rules: {
-      "react/react-in-jsx-scope": 0,
-      "react/jsx-uses-react": 0,
-      "no-unused-vars": "off",
-      "unused-imports/no-unused-imports": "error",
-      "unused-imports/no-unused-vars": [
-        "warn",
+      'react/react-in-jsx-scope': 0,
+      'react/jsx-uses-react': 0,
+      'no-unused-vars': 'off',
+      'unused-imports/no-unused-imports': 'error',
+      'unused-imports/no-unused-vars': [
+        'warn',
         {
-          vars: "all",
-          varsIgnorePattern: "^_",
-          args: "after-used",
-          argsIgnorePattern: "^_",
+          vars: 'all',
+          varsIgnorePattern: '^_',
+          args: 'after-used',
+          argsIgnorePattern: '^_',
+        },
+      ],
+      'prettier/prettier': [
+        'warn',
+        {
+          singleQuote: true,
+          semi: true,
         },
       ],
     },
@@ -38,7 +45,7 @@ export default [
   {
     settings: {
       react: {
-        version: "detect",
+        version: 'detect',
       },
     },
   },
