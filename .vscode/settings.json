@@ -1,0 +1,9 @@
+{
+  "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+  "editor.detectIndentation": true,
+  "editor.tabSize": 2,
+  "editor.autoIndent": "full",
+  "editor.indentSize": "tabSize",
+  "workbench.tree.indent": 8,
+  "editor.formatOnSave": true
+}

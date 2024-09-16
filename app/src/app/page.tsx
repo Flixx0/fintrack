@@ -1,5 +1,5 @@
-const Home = () => {
-  return <></>;
-};
+import { Home } from '@pages/Home/Home';
 
-export default Home;
+const Page = () => <Home />;
+
+export default Page;

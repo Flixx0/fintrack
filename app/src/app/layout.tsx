@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import './globals.css';
-import { ChakraProvider } from '@chakra-ui/react';
-import { fonts } from '@/app/fonts';
+
+import { Providers } from '@app/providers';
 
 export const metadata: Metadata = {
   title: 'Fintrack',
@@ -15,8 +15,8 @@ const RootLayout = ({
 }>) => {
   return (
     <html lang="en">
-      <body className={fonts.lato.className}>
-        <ChakraProvider>{children}</ChakraProvider>
+      <body>
+        <Providers>{children}</Providers>
       </body>
     </html>
   );
